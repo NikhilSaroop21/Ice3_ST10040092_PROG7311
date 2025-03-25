@@ -1,0 +1,32 @@
+﻿@{
+    var userId = Context.Session.GetInt32("UserId");
+    var userName = Context.Session.GetString("UserName");
+    var userRole = Context.Session.GetString("UserRole");
+}
+
+<div class="container">
+
+    <!-- 🔐 Auth Navigation -->
+    <div class="d-flex justify-content-between mb-3 align-items-center">
+        <div>
+            <a asp-controller="Library" asp-action="Index" class="btn btn-outline-primary me-2">🏠 Home</a>
+            <a asp-controller="Library" asp-action="BorrowedBooks" class="btn btn-outline-info">📄 Borrowed Books</a>
+        </div>
+
+        <div>
+            @if (userId != null)
+            {
+                <span class="me-3">👋 Logged in as <strong>@userName</strong> (@userRole)</span>
+                <a asp-controller="Login" asp-action="Logout" class="btn btn-sm btn-danger">Logout</a>
+            }
+            else
+            {
+                <a asp-controller="Login" asp-action="Index" class="btn btn-sm btn-success">Login</a>
+            }
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
