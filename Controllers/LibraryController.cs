@@ -69,7 +69,7 @@ namespace LibraryManagementSystem.Controllers
 
             var records = _libraryService.BorrowRecords;
 
-            // ✅ Filter to current user if role is User
+            //  Filter to current user if role is User
             if (user.Role == UserRole.User)
                 records = records.Where(r => r.UserId == userId).ToList();
 
