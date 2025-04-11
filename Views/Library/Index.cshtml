@@ -6,12 +6,12 @@
     var userRole = Context.Session.GetString("UserRole");
 }
 
-<h1 class="text-primary">📚 Library Books</h1>
+<h1 class="text-primary"> Library Books</h1>
 
 @if (userId == null)
 {
     <div class="alert alert-danger">
-        🚫 You must <a asp-controller="Login" asp-action="Index">log in</a> to view and borrow books.
+         You must <a asp-controller="Login" asp-action="Index">log in</a> to view and borrow books.
     </div>
 }
 else
