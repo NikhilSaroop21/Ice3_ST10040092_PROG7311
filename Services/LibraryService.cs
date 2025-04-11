@@ -2,7 +2,7 @@
 
 namespace LibraryManagementSystem.Services
 {
-    public class LibraryService : ILibraryService // 🔄 Implement interface here
+    public class LibraryService : ILibraryService //  Implement interface here
     {
         public List<Book> Books { get; set; }
         public List<User> Users { get; set; }
@@ -18,7 +18,7 @@ namespace LibraryManagementSystem.Services
                 new Book { Id = 3, Title = "C# in Depth", Author = "Jon Skeet", IsAvailable = true }
             };
 
-            // ✅ Fix: Use the UserRole enum instead of strings
+            //  Fix: Use the UserRole enum instead of strings
             Users = new List<User>
             {
                 new User { Id = 1, Name = "Alice", Role = UserRole.User },
